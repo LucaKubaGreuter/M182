@@ -1,4 +1,5 @@
 # HellPott
+Team: Laurin, Yassin & Luca
 
 ## Was ist HellPot?
 
@@ -11,15 +12,11 @@ Zusätzliche technische Features:
 * **JSON-Logging** – strukturierte Ausgabe der Anfragen und Aktionen
 * **Hohes Performance-Potenzial** – effizient und ressourcenschonend betrieben
 
----
-
 ## Funktionen & Nutzen
 
 * **Täuschung von Bots** – HellPot tarnt sich als „echte“ Webseite, verzögert Bots und verschwendet deren Ressourcen.
 * **Bot-Falle** – Besonders geeignet für Bot-Traffic, der automatisiert agiert und wenig auf Konformität achtet (z. B. das Ignorieren von `robots.txt`).
 * **Leistungsüberlegenheit** – dank `fasthttp` und effizienter Implementierung besonders performant
-
----
 
 ## Installation auf Ubuntu
 
@@ -28,8 +25,6 @@ Zusätzliche technische Features:
 sudo apt update && sudo apt upgrade -y
 sudo apt install -y git make build-essential
 ```
-
----
 
 ```bash
 wget https://go.dev/dl/go1.22.6.linux-amd64.tar.gz
@@ -55,10 +50,6 @@ source ~/.bashrc
 go version
 ```
 
-→ sollte etwas wie `go version go1.22.6 linux/amd64` ausgeben.
-
----
-
 ```bash
 git clone https://github.com/yunginnanet/HellPot.git
 cd HellPot
@@ -66,8 +57,6 @@ make
 ```
 
 Nach dem `make`-Befehl liegt das Binary im Projektordner (`./HellPot`).
-
----
 
 ### Default starten (YOLO-Modus)
 
@@ -84,10 +73,8 @@ Standardmässig läuft HellPot auf Port **8080**.
 Öffne:
 
 ```
-http://localhost:8080/
+http://localhost:8080/wp-login.php
 ```
-
----
 
 ### Unit-File erstellen
 
@@ -103,10 +90,10 @@ Description=HellPot Honeypot
 After=network.target
 
 [Service]
-ExecStart=/home/<dein-user>/HellPot/HellPot
+ExecStart=/home/kuba/HellPot/HellPot
 Restart=always
-User=<dein-user>
-WorkingDirectory=/home/<dein-user>/HellPot
+User=kuba
+WorkingDirectory=/home/kuba/HellPot
 StandardOutput=syslog
 StandardError=syslog
 SyslogIdentifier=hellpot
@@ -114,8 +101,6 @@ SyslogIdentifier=hellpot
 [Install]
 WantedBy=multi-user.target
 ```
-
-`<dein-user>` anpassen!
 
 ### Service aktivieren
 
@@ -131,10 +116,12 @@ sudo systemctl start hellpot
 systemctl status hellpot
 ```
 
----
-
 HellPot schreibt strukturierte Logs (JSON).
 
 ```bash
 journalctl -u hellpot -f
 ```
+
+## Demo
+
+![HellPot Demo](hellpot.png)
