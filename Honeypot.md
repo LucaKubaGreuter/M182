@@ -80,7 +80,7 @@ Beim ersten Start wird automatisch eine Config unter
 
 ### Im Browser testen
 
-Standardmäßig läuft HellPot auf Port **8080**.
+Standardmässig läuft HellPot auf Port **8080**.
 Öffne:
 
 ```
