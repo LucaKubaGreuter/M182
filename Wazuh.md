@@ -63,7 +63,7 @@
 
    ```xml
    <server>
-     <address>I192.168.10.20</address>
+     <address>192.168.10.20</address>
      <port>1514</port>
      <protocol>tcp</protocol>
    </server>
